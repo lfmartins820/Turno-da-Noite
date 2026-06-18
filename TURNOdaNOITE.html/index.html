@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="faviconTURNOdaNOITE.png">
+    <title>Turno da Noite — Obra de Arte</title>
+    <style>
+
+    @import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap );
+
+    :root {
+        --azul-profundo: #0b1d33;   
+        --azul-noite: #06111f;      
+        --amarelo-ouro: #e5b842;   
+        --vermelho-carne: #7a2222;  
+        --mdf-marrom: #3d2314;    
+        --texto-claro: #f4f6f8;   
+        --efeito-resina: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+       body {
+        background-color: var(--azul-noite);
+        color: var(--texto-claro);
+        line-height: 1.6;
+        font-family: 'Montserrat', sans-serif;
+        position: relative;
+    }
+
+   
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: -1;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='4' stitchTiles='stitch'/%3E%3CfeDiffuseLighting surfaceScale='5' diffConstant='1.2' lighting-color='%23ffffff'%3E%3CfeDistantLight azimuth='60' elevation='40'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        background-size: 600px;
+        background-repeat: repeat;
+        mix-blend-mode: color-dodge; 
+        opacity: 0.08; 
+    }
+
+
+    header {
+        background: linear-gradient(135deg, rgba(11, 29, 51, 0.85), rgba(6, 17, 31, 0.95));
+        padding: 40px 20px;
+        text-align: center;
+        border-bottom: 3px solid var(--amarelo-ouro);
+        box-shadow: inset 0 -10px 30px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        color: var(--texto-claro);
+        text-transform: uppercase;
+    }
+
+    .logo span {
+        color: var(--amarelo-ouro);
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    .hero {
+        background-color: rgba(11, 29, 51, 0.9); 
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        margin-bottom: 40px;
+        box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(5px);
+    }
+    
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; height: 50%;
+        background: linear-gradient(to bottom, var(--efeito-resina), transparent);
+        pointer-events: none;
+    }
+
+    .placeholder-imagem {
+        background-color: var(--mdf-marrom);
+        width: 100%;
+        height: auto;
+        min-height: 450px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--vermelho-carne);
+        color: rgba(255,255,255,0.4);
+        font-style: italic;
+        margin-bottom: 20px;
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .obra-titulo {
+        font-family: 'Cinzel', serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--amarelo-ouro);
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        line-height: 1.3;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+    }
+
+    .detalhes-tecnicos {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .card-detalhe {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 15px;
+        border-radius: 6px;
+        border-left: 4px solid var(--vermelho-carne);
+        backdrop-filter: blur(2px);
+    }
+
+    .card-detalhe h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--amarelo-ouro);
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .conteudo-secao {
+        margin-bottom: 40px;
+        background: rgba(6, 17, 31, 0.7); 
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid rgba(255,255,255,0.02);
+    }
+
+    .conteudo-secao h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        font-size: 1.6rem;
+        border-bottom: 2px solid var(--vermelho-carne);
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        color: var(--texto-claro);
+        letter-spacing: 1px;
+    }
+
+    .texto-narrativo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.1rem;
+        color: #cbd5e1;
+        text-align: justify;
+    }
+
+    footer {
+        background-color: #030810;
+        padding: 40px 20px;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        margin-top: 60px;
+    }
+
+    .botao-contato {
+        display: inline-block;
+        background-color: var(--vermelho-carne);
+        color: var(--texto-claro);
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        margin-top: 15px;
+    }
+
+    .botao-contato:hover {
+        background-color: transparent;
+        border-color: var(--amarelo-ouro);
+        color: var(--amarelo-ouro);
+        box-shadow: 0 0 15px rgba(229, 184, 66, 0.4);
+    }
+
+    .direitos {
+        margin-top: 30px;
+        font-size: 0.85rem;
+        color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+        .placeholder-imagem { min-height: 250px; }
+        .logo { font-size: 1.6rem; }
+        .obra-titulo { font-size: 1.8rem; }
+    }
+</style>
+
+
+</head>
+<body>
+    <header>
+        <div class="logo">Turno da <span>Noite</span></div>
+    </header>
+    <div class="container">
+        <section class="hero">
+            <div class="placeholder-imagem" style="background-image: url('TURNOdaNOITE.png');">
+            </div>
+            
+            <p>A noite se faz arte do outro lado do vidro, enquanto os corpos se curvam, incapazes de contemplar a própria liberdade. </p>           
+         
+            <div class="detalhes-tecnicos">
+                
+            </div>
+        </section>
+               <section class="conteudo-secao">
+            <h2>O Conceito</h2>
+            <p class="texto-narrativo">
+               Esta tela ecoa o silêncio de madrugadas inteiras engolidas pelo cansaço mecânico da linha de produção. Um retrato visceral onde a alma e o corpo se curvam sob a iluminação crua da fábrica, enquanto o infinito da noite "em sua beleza eterna e indiferente" assiste do outro lado do vidro ao desgaste silencioso de vidas presas ao ritmo repetitivo da sobrevivência. </p>           
+            </section>
+                
+        </section>
+
+
+    </div>
+
+    <footer>
+        <h2>Gostou deste projeto?</h2>
+        <p>A obra está disponível para exposições coletivas ou individuais.</p>
+        <a href="https://wa.me/5549999291886" target="_blank" class="botao-contato">Entrar em Contato</a>
+        
+        <p class="direitos">&copy; 2026 turnodanoite.com.br — Todos os direitos reservados ao artista.</p>
+    </footer>
+
+</body>
+</html>
