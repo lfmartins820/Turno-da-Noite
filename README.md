@@ -5,7 +5,7 @@
 ---
 
 ## 📌 Sobre a Obra
-**Turno da Noite** é uma crônica visual da jornada operária na cidade de Chapecó - SC, concebida a partir da vivência real nas madrugadas industriais. A obra afasta-se de idealizações para projetar o isolamento e o contraste existencial entre a dureza do ambiente fabril e a imensidão da noite lá fora.
+**Turno da Noite** é uma crônica visual da jornada operária na cidade de Chapecó - SC, concebida a partir da vivência real nas madrugadas industriais. A obra, longe de idealizações, busca projetar o isolamento e o contraste existencial entre a dureza do ambiente fabril e a imensidão da noite lá fora.
 
 ---
 
