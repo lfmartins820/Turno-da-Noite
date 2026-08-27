@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="faviconTURNOdaNOITE.png">
     <meta property="og:title" content="Turno da Noite — Obra Artística" />
     <meta property="og:description" content="Uma reflexão sobre o desgaste do corpo na linha de produção, enquanto a noite assiste indiferente do outro lado do vidro." />
-    <meta property="og:image" content="https://turnodanoite.com.br/metaimg.png">
+    <meta property="og:image" content="{{ url_for('static', filename='metaimg.png', _external=True) }}">
     <title>Turno da Noite — Obra de Arte</title>
     <style>
 
@@ -46,8 +46,7 @@
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='4' stitchTiles='stitch'/%3E%3CfeDiffuseLighting surfaceScale='5' diffConstant='1.2' lighting-color='%23ffffff'%3E%3CfeDistantLight azimuth='60' elevation='40'/%3E%3C/feDiffuseLighting%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         background-size: 600px;
         background-repeat: repeat;
-        mix-blend-mode: color-dodge; 
-        opacity: 0.08; 
+        opacity: 0.06;
     }
 
 
@@ -88,7 +87,6 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(5px);
     }
     
     .hero::before {
@@ -140,7 +138,6 @@
         padding: 15px;
         border-radius: 6px;
         border-left: 4px solid var(--vermelho-carne);
-        backdrop-filter: blur(2px);
     }
 
     .card-detalhe h3 {
