@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Obra de arte que ecoa o silêncio de madrugadas inteiras engolidas pelo cansaço mecânico da linha de produção, retratando o desgaste do corpo e da alma." />
+    <meta name="theme-color" content="#06111f">
     <link rel="icon" type="image/png" href="faviconTURNOdaNOITE.png">
     <meta property="og:title" content="Turno da Noite — Obra Artística" />
     <meta property="og:description" content="Uma reflexão sobre o desgaste do corpo na linha de produção, enquanto a noite assiste indiferente do outro lado do vidro." />
     <meta property="og:image" content="{{ url_for('static', filename='metaimg.png', _external=True) }}">
     <title>Turno da Noite — Obra de Arte</title>
-    <style>
 
-    @import url(https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap );
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"></noscript>
+    <link rel="preload" as="image" href="TURNOdaNOITE.png">
+
+    <style>
 
     :root {
         --azul-profundo: #0b1d33;   
@@ -187,17 +193,27 @@
         margin-top: 15px;
     }
 
-    .botao-contato:hover {
+    .botao-contato:hover,
+    .botao-contato:focus-visible {
         background-color: transparent;
         border-color: var(--amarelo-ouro);
         color: var(--amarelo-ouro);
         box-shadow: 0 0 15px rgba(229, 184, 66, 0.4);
     }
 
+    .botao-contato:focus-visible {
+        outline: 2px solid var(--amarelo-ouro);
+        outline-offset: 3px;
+    }
+
     .direitos {
         margin-top: 30px;
         font-size: 0.85rem;
-        color: #64748b;
+        color: #6b7b93;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .botao-contato { transition: none; }
     }
 
     @media (max-width: 600px) {
@@ -211,11 +227,11 @@
 </head>
 <body>
     <header>
-        <div class="logo">Turno da <span>Noite</span></div>
+        <h1 class="logo">Turno da <span>Noite</span></h1>
     </header>
-    <div class="container">
+    <main class="container">
         <section class="hero">
-            <div class="placeholder-imagem" style="background-image: url('TURNOdaNOITE.png');">
+            <div class="placeholder-imagem" role="img" aria-label="Pintura: operários curvados sob a luz crua de uma linha de produção durante a madrugada, com a noite estrelada visível do outro lado de uma janela de vidro." style="background-image: url('TURNOdaNOITE.png');">
             </div>
             
             <p>A noite se faz arte do outro lado do vidro, enquanto os corpos se curvam, incapazes de contemplar a própria liberdade. </p>           
@@ -224,21 +240,17 @@
                 
             </div>
         </section>
-               <section class="conteudo-secao">
+        <section class="conteudo-secao">
             <h2>O Conceito</h2>
             <p class="texto-narrativo">
-               Esta tela ecoa o silêncio de madrugadas inteiras engolidas pelo cansaço mecânico da linha de produção. Um retrato visceral onde a alma e o corpo se curvam sob a iluminação crua da fábrica, enquanto o infinito da noite "em sua beleza eterna e indiferente" assiste do outro lado do vidro ao desgaste silencioso de vidas presas ao ritmo repetitivo da sobrevivência. </p>           
-            </section>
-                
+               Esta tela ecoa o silêncio de madrugadas inteiras engolidas pelo cansaço mecânico da linha de produção. Um retrato visceral onde a alma e o corpo se curvam sob a iluminação crua da fábrica, enquanto o infinito da noite "em sua beleza eterna e indiferente" assiste do outro lado do vidro ao desgaste silencioso de vidas presas ao ritmo repetitivo da sobrevivência. </p>
         </section>
-
-
-    </div>
+    </main>
 
     <footer>
         <h2>Gostou deste projeto?</h2>
         <p>A obra está disponível para exposições coletivas ou individuais.</p>
-        <a href="https://wa.me/5549999291886" target="_blank" class="botao-contato">Entrar em Contato</a>
+        <a href="https://wa.me/5549999291886" target="_blank" rel="noopener noreferrer" class="botao-contato" aria-label="Entrar em contato pelo WhatsApp (abre em nova aba)">Entrar em Contato</a>
         
         <p class="direitos">&copy; 2026 turnodanoite.com.br — Todos os direitos reservados ao artista.</p>
     </footer>
